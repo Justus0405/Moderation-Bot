@@ -1,0 +1,22 @@
+# Ignore node_modules
+**/node_modules/
+**/dist
+pnpm-lock.yaml
+.pnpm
+.pnpm-store
+
+# Ignore debug logs
+npm-debug.log
+pnpm-debug.log
+
+# Ignore Docker’s own files
+Dockerfile
+.dockerignore
+
+# Ignore other local/dev files
+*.md
+.git
+.gitignore
+.coverage
+.coverage.*
+.aws
