@@ -4,13 +4,13 @@ RUN addgroup -S bot && adduser -S bot -G bot
 
 WORKDIR /usr/src/bot
 
-COPY package.json ./
+COPY package*.json ./
 
 RUN chown -R bot:bot /usr/src/bot
 
 USER bot
 
-RUN npm install
+RUN npm ci --omit=dev
 
 COPY --chown=bot:bot . .
 
