@@ -1,5 +1,5 @@
-const sendModerationDone = require('../../../libs/sendModerationDone');
-const checkPermissions = require('../../../libs/checkPermissions');
+const sendModerationDone = require('../../../libs/sends/sendModerationDone');
+const checkPermissions = require('../../../libs/checks/checkPermissions');
 
 async function unmute(interaction) {
 

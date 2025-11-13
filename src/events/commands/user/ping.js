@@ -10,7 +10,7 @@ async function ping(interaction, client) {
     const embed = new EmbedBuilder()
         .setTitle('Latency')
         .setDescription(`Client: \`${ping}ms\`\n\nServer: \`${client.ws.ping}ms\`\n`)
-        .setColor(0x89b4fa);
+        .setColor('#89b4fa');
 
     interaction.editReply({ embeds: [embed], flags: 64 });
 }

@@ -13,11 +13,11 @@ const client = new Client({
 // Bot token from .env file.
 client.login(process.env.TOKEN);
 
+// Register Global Commands.
+require('./libs/registers/registerGlobalCommands');
+
 // Call functions.
 require('./events/clientReady')(client);
-
-// Register Global Commands.
-require('./libs/registerGlobalCommands');
 
 // Events.
 require('./events/messageCreate')(client);

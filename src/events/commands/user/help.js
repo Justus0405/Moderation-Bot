@@ -4,7 +4,6 @@ async function help(interaction) {
     const embed = new EmbedBuilder()
         .setTitle('Command Overview')
         .setDescription('Quick reference of all available commands.')
-        .setColor(0x89b4fa)
         .addFields(
             {
                 name: 'User Commands',
@@ -27,6 +26,7 @@ async function help(interaction) {
                 inline: false,
             }
         )
+        .setColor('#89b4fa')
         .setTimestamp();
 
     await interaction.reply({ embeds: [embed], flags: 64 });

@@ -1,4 +1,4 @@
-const sanitizeInput = require('../libs/sanitizeInput');
+const checkInputSanitization = require('../libs/checks/checkInputSanitization');
 
 module.exports = (client) => {
     // Do somthing when a new message is written.
@@ -9,7 +9,7 @@ module.exports = (client) => {
         if (message.author.bot) return;
 
         // sanitize input message from weird characters.
-        const sanitizedMessage = await sanitizeInput(message.content.toLowerCase());
+        const sanitizedMessage = await checkInputSanitization(message.content.toLowerCase());
 
         // Crazy? I was crazy once.
         if (sanitizedMessage.includes('crazy')) {

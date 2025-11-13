@@ -20,7 +20,6 @@ module.exports = (client) => {
         // Update Presence every 1 minute.
         // This is needed because otherwise the status randomly gets blank idk.
         const sendPresenceInterval = setInterval(() => {
-            //console.log('[  ] Updating Presence...');
             updatePresence();
         }, 60000);
     });

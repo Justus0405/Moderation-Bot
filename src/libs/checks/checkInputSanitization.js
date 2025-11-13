@@ -1,4 +1,4 @@
-async function sanitizeInput(input) {
+async function checkInputSanitization(input) {
 
     const map = {
         // Cyrillic lowercase
@@ -58,4 +58,4 @@ async function sanitizeInput(input) {
     return input.split('').map(ch => map[ch] || ch).join('');
 }
 
-module.exports = sanitizeInput;
+module.exports = checkInputSanitization;

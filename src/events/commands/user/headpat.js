@@ -9,7 +9,7 @@ async function headpat(interaction) {
         .setTitle('Pat Pat')
         .setDescription(`${interaction.user} gave you headpats :3`)
         .setImage('https://c.tenor.com/KyGPQuYCdYkAAAAd/tenor.gif')
-        .setColor(0x89b4fa);
+        .setColor('#89b4fa');
 
     await interaction.reply({
         content: `${member}`,

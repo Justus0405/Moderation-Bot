@@ -1,6 +1,6 @@
-const sendErrorMessage = require("./sendErrorMessage");
+const sendErrorMessage = require('../sends/sendErrorMessage');
 
-async function convertTime(interaction, time) {
+async function checkInputTime(interaction, time) {
 
     try {
         if (typeof time === 'number') return time;
@@ -39,4 +39,4 @@ async function convertTime(interaction, time) {
     }
 }
 
-module.exports = convertTime;
+module.exports = checkInputTime;

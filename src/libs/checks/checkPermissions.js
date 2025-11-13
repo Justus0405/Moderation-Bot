@@ -1,4 +1,4 @@
-const sendErrorMessage = require("./sendErrorMessage");
+const sendErrorMessage = require('../sends/sendErrorMessage');
 
 async function checkPermissions(interaction, targetMember, permission) {
 

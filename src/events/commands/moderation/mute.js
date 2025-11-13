@@ -1,6 +1,6 @@
-const sendModerationDone = require('../../../libs/sendModerationDone');
-const checkPermissions = require('../../../libs/checkPermissions');
-const convertTime = require('../../../libs/convertTime');
+const sendModerationDone = require('../../../libs/sends/sendModerationDone');
+const checkPermissions = require('../../../libs/checks/checkPermissions');
+const checkInputTime = require('../../../libs/checks/checkInputTime');
 
 async function mute(interaction) {
 
@@ -8,9 +8,9 @@ async function mute(interaction) {
     const member = interaction.options.getMember('user');
     const duration = interaction.options.getString('duration');
     const reason = interaction.options.getString('reason');
-    const durationMillis = await convertTime(interaction, duration);
+    const durationMillis = await checkInputTime(interaction, duration);
 
-    // Stop when convertTime returns null
+    // Stop when checkInputTime returns null
     if (!durationMillis) return;
 
     // Check permissions and hierarchy
