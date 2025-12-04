@@ -36,7 +36,7 @@ Moderation Commands:
 1. Clone the repository:
 
 ```shell
-git https://github.com/Justus0405/Moderation-Bot.git
+git --depth 1 https://github.com/Justus0405/Moderation-Bot.git
 ```
 
 2. Navigate to the directory:
@@ -51,7 +51,7 @@ cd Moderation-Bot
 nano .env
 ```
 
-4. Build an run with docker:
+4. Build and run with docker:
 
 ```shell
 docker-compose up -d --build
