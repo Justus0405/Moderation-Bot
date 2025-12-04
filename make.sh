@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-clear && docker-compose down --timeout 0 && docker-compose up -d --build && docker logs --follow moderation-bot
+
+clear && docker-compose down --timeout 0 && docker-compose up -d --build && docker-compose logs --follow
