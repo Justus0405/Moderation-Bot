@@ -1,17 +1,13 @@
 FROM node:20-alpine
 
-RUN addgroup -S bot && adduser -S bot -G bot
+USER node
 
-WORKDIR /usr/src/bot
+WORKDIR /home/node/llm-bot
 
-COPY package*.json ./
-
-RUN chown -R bot:bot /usr/src/bot
-
-USER bot
+COPY --chown=node:node package*.json ./
 
 RUN npm ci --omit=dev
 
-COPY --chown=bot:bot . .
+COPY --chown=node:node . .
 
 CMD ["node", "src/index.js"]
