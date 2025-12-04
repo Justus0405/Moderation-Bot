@@ -2,7 +2,7 @@ FROM node:20-alpine
 
 USER node
 
-WORKDIR /home/node/llm-bot
+WORKDIR /home/node/moderation-bot
 
 COPY --chown=node:node package*.json ./
 

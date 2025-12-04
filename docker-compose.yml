@@ -1,8 +1,7 @@
 services:
   moderation-bot:
+    container_name: "moderation-bot"
+    restart: "unless-stopped"
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: 'moderation-bot'
-    restart: 'unless-stopped'
-    network_mode: 'bridge'
