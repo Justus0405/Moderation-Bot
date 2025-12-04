@@ -18,6 +18,7 @@ docker-compose.yml
 *.md
 .git
 .gitignore
+.gitattributes
 .coverage
 .coverage.*
 .aws
