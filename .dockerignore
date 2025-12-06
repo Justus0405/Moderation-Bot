@@ -17,6 +17,7 @@ docker-compose.yml
 # Ignore other local/dev files
 *.md
 .git
+.github
 .gitignore
 .gitattributes
 .coverage
