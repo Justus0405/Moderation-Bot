@@ -1,24 +1,39 @@
 require('dotenv').config({ quiet: true });
 const { REST, Routes, ApplicationCommandOptionType, PermissionFlagsBits, } = require('discord.js');
 
-// Define Rules in an array.
-const ruleTexts = [
-    'Harassment, slurs, or personal attacks either implied or direct.',
-    'Explicit, offensive, or NSFW messages and content.',
-    'Flooding chats with messages, links, reactions, or mentions.',
-    'Promoting products, services, or other servers.',
-    'Sharing personal info or private messages.',
-    'Pretending to be staff, other members, or public figures.',
-    'Alt accounts or tactics to bypass bans or mutes.',
-    'Broken Discord’s Terms of Service or Community Guidelines.',
-    'Did not follow staff instructions.',
-    'Did not keep discussions relevant to the channel.',
-    'Did not post content in the right channel.',
-    'Did not use only English or German for clarity and moderation.'
+const punishmentApply = [
+    'User engaged in harassment, slurs, or personal attacks.',
+    'User made threats of violence or encouraged self-harm.',
+    'User promoted external products, services, or other servers.',
+    'User violated Discord’s Terms of Service or Community Guidelines.',
+    'User posted explicit, offensive, or otherwise NSFW content.',
+    'User posted graphic, gory, or violent content.',
+    'User posted in incorrect channels or ignored channel topics.',
+    'User posted scam, phishing, or fraudulent links.',
+    'User shared illegal, pirated, or malicious content.',
+    'User shared personal information or private data without consent.',
+    'User abused alternative accounts to evade restrictions.',
+    'User refused to follow staff instructions.',
+    'User impersonated staff, members, or public figures.',
+    'User participated in raids, coordinated attacks, or mass-mention spam.',
+    'User used languages other than allowed in moderated areas.',
+    'User disrupted discussions with irrelevant or off-topic content.'
 ];
 
-// Format the rules so discord likes it.
-const rules = ruleTexts.map(text => ({ name: text, value: text }));
+const punishmentResolve = [
+    'Evidence did not support maintaining the punishment.',
+    'New evidence showed the punishment was unnecessary.',
+    'Punishment was issued in error.',
+    'Punishment was lifted at staff discretion.',
+    'Punishment was removed as part of a server-wide reset.',
+    'The issue was resolved through discussion.',
+    'The user demonstrated understanding of the rules.',
+    'The user successfully appealed the punishment.'
+];
+
+// Format the arrays so discord likes it.
+const punishmentApplyArray = punishmentApply.map(text => ({ name: text, value: text }));
+const punishmentResolveArray = punishmentResolve.map(text => ({ name: text, value: text }));
 
 const commands = [
     {
@@ -63,7 +78,7 @@ const commands = [
                 description: 'The mute reason',
                 type: ApplicationCommandOptionType.String,
                 required: true,
-                choices: rules
+                choices: punishmentApplyArray
             },
         ]
     },
@@ -82,7 +97,8 @@ const commands = [
                 name: 'reason',
                 description: 'The unmute reason',
                 type: ApplicationCommandOptionType.String,
-                required: true
+                required: true,
+                choices: punishmentResolveArray
             },
         ]
     },
@@ -102,7 +118,7 @@ const commands = [
                 description: 'The kick reason',
                 type: ApplicationCommandOptionType.String,
                 required: true,
-                choices: rules
+                choices: punishmentApplyArray
 
             },
         ]
@@ -123,7 +139,7 @@ const commands = [
                 description: 'The ban reason',
                 type: ApplicationCommandOptionType.String,
                 required: true,
-                choices: rules
+                choices: punishmentApplyArray
             },
         ]
     },
@@ -142,7 +158,8 @@ const commands = [
                 name: 'reason',
                 description: 'The unban reason',
                 type: ApplicationCommandOptionType.String,
-                required: true
+                required: true,
+                choices: punishmentResolveArray
             },
         ]
     },
