@@ -1,24 +1,33 @@
 require('dotenv').config({ quiet: true });
 const { REST, Routes, ApplicationCommandOptionType, PermissionFlagsBits, } = require('discord.js');
 
+// Source: https://discord.com/guidelines
 const punishmentApply = [
-    'User engaged in harassment, slurs, or personal attacks.',
-    'User made threats of violence or encouraged self-harm.',
-    'User promoted external products, services, or other servers.',
-    'User violated Discord’s Terms of Service or Community Guidelines.',
-    'User posted an excessive number of messages in one or multiple chats',
-    'User posted explicit, offensive, or otherwise NSFW content.',
-    'User posted graphic, gory, or violent content.',
-    'User posted in incorrect channels or ignored channel topics.',
-    'User posted scam, phishing, or fraudulent links.',
-    'User shared illegal, pirated, or malicious content.',
-    'User shared personal information or private data without consent.',
-    'User abused alternative accounts to evade punishments.',
-    'User refused to follow staff instructions.',
-    'User impersonated staff, members, or public figures.',
-    'User participated in raids, coordinated attacks, or mass-mention spam.',
-    'User used languages other than allowed in moderated areas.',
-    'User disrupted discussions with irrelevant or off-topic content.'
+    "Promoted, coordinated, or engaged in harassment. [1]",
+    "Threatened to harm another individual or group of people. [2]",
+    "Shared or threatened to share personally identifiable information (PII) without consent. [3]",
+    "Used hate speech or engaged in hateful conduct. [4]",
+    "Organized, promoted, or supported violent extremism. [5]",
+    "Created, posted, solicited, shared, or attempted to distribute content involving child sexual abuse. [6]",
+    "Engaged in unsafe sexual or risky conduct while under the age of 18. [7]",
+    "Engaged in sexual conduct with someone under the age of 18. [8]",
+    "Made sexually explicit content available to individuals under the age of 18. [9]",
+    "Shared, distributed, or created sexually explicit or suggestive content of adults without explicit consent. [10]",
+    "Shared content that glorified, promoted, or normalized suicide or self-harm. [11]",
+    "Uploaded or shared material depicting violence, gore, or animal cruelty with intent to shock or harass. [12]",
+    "Sent unsolicited bulk messages or spam. [13]",
+    "Used self-bots or user-bots. [14]",
+    "Shared false or misleading information (misinformation). [17]",
+    "Misrepresented identity in a deceptive or harmful way. [18]",
+    "Evaded Discord, or server-level enforcement actions. [19]",
+    "Engaged in activities that damaged or compromised account, network, or system security. [20]",
+    "Used Discord to promote, coordinate, or execute financial scams. [21]",
+    "Engaged in fraudulent activities to generate profit at the expense of others. [22]",
+    "Submitted false, misleading, or abusive reports to the server support teams. [23]",
+    "Shared content that violated intellectual property or other rights. [24]",
+    "Organized, promoted, or facilitated the sale of regulated or dangerous goods. [25]",
+    "Coordinated or participated in illegal gambling. [26]",
+    "Organized, promoted, or engaged in illegal activity that harmed the dignity, safety, or wellbeing of others. [27]"
 ];
 
 const punishmentResolve = [
@@ -27,9 +36,9 @@ const punishmentResolve = [
     'Punishment was issued in error.',
     'Punishment was lifted at staff discretion.',
     'Punishment was removed as part of a server-wide reset.',
-    'The issue was resolved through discussion.',
-    'The user demonstrated understanding of the rules.',
-    'The user successfully appealed the punishment.'
+    'Issue was resolved through discussion.',
+    'User demonstrated understanding of the rules.',
+    'User successfully appealed the punishment.'
 ];
 
 // Format the arrays so discord likes it.
