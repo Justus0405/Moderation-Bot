@@ -23,6 +23,7 @@ docker-compose.yml
 .coverage
 .coverage.*
 .aws
+.env
 .env.example
 make.sh
 debug.sh

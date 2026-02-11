@@ -5,3 +5,5 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - ./.env:/home/node/moderation-bot/.env
