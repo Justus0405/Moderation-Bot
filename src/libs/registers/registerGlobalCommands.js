@@ -27,7 +27,7 @@ const punishmentApply = [
     "Shared content violating intellectual property rights. [24]",
     "Sold or promoted regulated or dangerous goods. [25]",
     "Participated in illegal gambling. [26]",
-    "Engaged in illegal activity harming others' safety or wellbeing. [27]"
+    "Engaged in illegal activity harming others safety or wellbeing. [27]"
 ];
 
 const punishmentResolve = [
