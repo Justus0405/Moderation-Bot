@@ -1,11 +1,12 @@
 const { ActivityType } = require("discord.js");
 
 module.exports = (client) => {
+
     // This function runs code once the bot is ready.
-
     client.once('clientReady', async () => {
-        console.log(`[  ] ${client.user.tag} is online!`);
 
+        // Print this message when the bot is loaded.
+        console.log(`[  ] ${client.user.tag} is online!`);
         // Set Presence.
         const updatePresence = () => {
             client.user.setPresence({
