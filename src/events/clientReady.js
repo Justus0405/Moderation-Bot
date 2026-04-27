@@ -7,6 +7,7 @@ module.exports = (client) => {
 
         // Print this message when the bot is loaded.
         console.log(`[  ] ${client.user.tag} is online!`);
+
         // Set Presence.
         const updatePresence = () => {
             client.user.setPresence({
