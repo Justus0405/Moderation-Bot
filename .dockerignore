@@ -28,3 +28,4 @@ docker-compose.yml
 make.sh
 debug.sh
 kill.sh
+update.sh
